@@ -138,25 +138,25 @@ class ComposerStaticInite249306b8c7ac427060268586f916aff
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'I' => 
-        array (
-            'Infra\\' => 
-            array (
-                0 => __DIR__ . '/../..' . '/src',
+    public static $prefixesPsr0 = array(
+        'T' =>
+            array(
+                'TicketBlaster\\' =>
+                    array(
+                        0 => __DIR__ . '/../..' . '/src',
+                    ),
             ),
-        ),
-        'A' => 
-        array (
-            'Acme\\' => 
-            array (
-                0 => __DIR__ . '/../..' . '/src',
+        'I' =>
+            array(
+                'Infra\\' =>
+                    array(
+                        0 => __DIR__ . '/../..' . '/src',
+                    ),
             ),
-        ),
-        '\'' => 
-        array (
-            '\'TicketBlaster\\' => 
-            array (
+        'A' =>
+            array(
+                'Acme\\' =>
+                    array (
                 0 => __DIR__ . '/../..' . '/src',
             ),
         ),

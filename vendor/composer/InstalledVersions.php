@@ -12,44 +12,42 @@ use Composer\Semver\VersionParser;
 class InstalledVersions
 {
 private static $installed = array (
-  'root' => 
-  array(
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' =>
-          array(),
-      'reference' => 'b44fda06cac42fd525ea3451c79d27fcb2b0aab1',
-      'name' => 'do-it-yourself-event-sourcing-tooling/code-generation-messages',
-  ),
-  'versions' => 
-  array (
-    'danielstjules/stringy' => 
-    array (
-      'pretty_version' => '3.1.0',
-      'version' => '3.1.0.0',
-      'aliases' => 
-      array (
+  'root' =>
+      array(
+          'pretty_version' => 'dev-master',
+          'version' => 'dev-master',
+          'aliases' =>
+              array(),
+          'reference' => '1fc675404a9b6773f26744eaa92553a00c1a1bef',
+          'name' => 'do-it-yourself-event-sourcing-tooling/code-generation-messages',
       ),
-      'reference' => 'df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e',
-    ),
-    'do-it-yourself-event-sourcing-tooling/code-generation-messages' =>
-        array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'aliases' =>
-                array(),
-            'reference' => 'b44fda06cac42fd525ea3451c79d27fcb2b0aab1',
-        ),
-    'fzaninotto/faker' => 
-    array (
-      'pretty_version' => 'v1.7.1',
-      'version' => '1.7.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd3ed4cc37051c1ca52d22d76b437d14809fc7e0d',
-    ),
-    'http-interop/http-factory' => 
+  'versions' =>
+      array(
+          'danielstjules/stringy' =>
+              array(
+                  'pretty_version' => '3.1.0',
+                  'version' => '3.1.0.0',
+                  'aliases' =>
+                      array(),
+                  'reference' => 'df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e',
+              ),
+          'do-it-yourself-event-sourcing-tooling/code-generation-messages' =>
+              array(
+                  'pretty_version' => 'dev-master',
+                  'version' => 'dev-master',
+                  'aliases' =>
+                      array(),
+                  'reference' => '1fc675404a9b6773f26744eaa92553a00c1a1bef',
+              ),
+          'fzaninotto/faker' =>
+              array(
+                  'pretty_version' => 'v1.7.1',
+                  'version' => '1.7.1.0',
+                  'aliases' =>
+                      array(),
+                  'reference' => 'd3ed4cc37051c1ca52d22d76b437d14809fc7e0d',
+              ),
+          'http-interop/http-factory' =>
     array (
       'pretty_version' => '0.3.0',
       'version' => '0.3.0.0',

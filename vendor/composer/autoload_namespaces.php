@@ -5,8 +5,8 @@
 $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
-return array(
-    'Infra\\' => array($baseDir . '/src'),
-    'Acme\\' => array($baseDir . '/src'),
-    '\'TicketBlaster\\' => array($baseDir . '/src'),
-);
+return [
+    'TicketBlaster\\' => [$baseDir . '/src'],
+    'Infra\\' => [$baseDir . '/src'],
+    'Acme\\' => [$baseDir . '/src'],
+];
