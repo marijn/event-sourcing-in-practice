@@ -2,7 +2,7 @@
 
 namespace Infra\Testing\ScenarioVisualization;
 
-use Infra\EventSourcing\Event;
+use Infra\EventSourcing\DomainEvent;
 use Infra\Testing\ScenarioVisualization\StepDescription;
 use function Acme\Infra\EventSourcing\fully_qualified_class_name_to_canonical;
 use ReflectionObject;
@@ -15,11 +15,10 @@ final class EventDescription extends StepDescription {
     private $eventName;
     private $data;
 
-    function __construct (Event $event) {
+    function __construct (DomainEvent $event) {
         $this->eventName = fully_qualified_class_name_to_canonical(get_class($event));
         $this->data = [];
         $exampleValues = (new ReflectionObject($event))->getConstant('exampleValues');
-
         foreach ($event->rawMessagePayload() as $key => $value)
         {
             $this->data[$key] = $value === $exampleValues[$key] ? '...' : $value;

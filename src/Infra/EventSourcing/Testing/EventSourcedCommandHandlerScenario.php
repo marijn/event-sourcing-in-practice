@@ -3,7 +3,7 @@
 namespace Infra\EventSourcing\Testing;
 
 use Infra\EventSourcing\Command;
-use Infra\EventSourcing\Event;
+use Infra\EventSourcing\DomainEvent;
 use Infra\Testing\ScenarioVisualization\VisualScenario;
 use Infra\Testing\ScenarioVisualization\StepDescription;
 use Infra\Testing\TestScenario;
@@ -24,7 +24,7 @@ final class EventSourcedCommandHandlerScenario implements TestScenario {
         $this->then = StepDescription::forHotspot('No outcome specified', 'If this is desired change your test to use `thenNothing` to signal explicitly that nothing should happen.');
     }
 
-    function given(Event ... $events): EventSourcedCommandHandlerScenario {
+    function given (DomainEvent ...$events): EventSourcedCommandHandlerScenario {
         $this->given = StepDescription::forEvents(... $events);
 
         return $this;
@@ -36,7 +36,7 @@ final class EventSourcedCommandHandlerScenario implements TestScenario {
         return $this;
     }
 
-    function then(Event $event): EventSourcedCommandHandlerScenario {
+    function then (DomainEvent $event): EventSourcedCommandHandlerScenario {
         $this->then = StepDescription::forEvent($event);
 
         return $this;

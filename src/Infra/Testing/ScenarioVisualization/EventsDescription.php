@@ -2,7 +2,7 @@
 
 namespace Infra\Testing\ScenarioVisualization;
 
-use Infra\EventSourcing\Event;
+use Infra\EventSourcing\DomainEvent;
 use Infra\Testing\ScenarioVisualization\StepDescription;
 
 /**
@@ -13,9 +13,8 @@ final class EventsDescription extends StepDescription {
     /** @var \Infra\Testing\ScenarioVisualization\StepDescription[] */
     private $events;
 
-    function __construct (Event ... $events) {
+    function __construct (DomainEvent ...$events) {
         $this->events = [];
-
         foreach ($events as $event)
         {
             $this->events[] = StepDescription::forEvent($event);

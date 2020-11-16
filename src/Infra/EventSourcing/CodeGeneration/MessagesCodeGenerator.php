@@ -170,7 +170,7 @@ PHP;
 
         return <<<PHP
 {$this->generateMessageDocBlock($eventSpecification)}
-final class {$eventClassName} implements \Infra\EventSourcing\Event {
+final class {$eventClassName} implements \Infra\EventSourcing\DomainEvent {
 {$this->generateMessageConstructor($eventSpecification)}
 {$exampleValueCode}
 {$factoryCode}
