@@ -30,7 +30,7 @@ TicketBlaster.ExperimentalTicketChecking:
           example: 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA'
         ticketId:
           example: 'ticket:A43CX2'
-        usedAt:
+        checkedAt:
           example: '2017-05-09 12:05:02.999999+0000'
 
   commands:

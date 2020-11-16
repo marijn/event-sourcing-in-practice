@@ -195,24 +195,24 @@ namespace TicketBlaster\ExperimentalTicketChecking {
         /**
          * @param string $showId
          * @param string $ticketId
-         * @param string $usedAt
+         * @param string $checkedAt
          *
          * @api
          */
         function __construct (
             string $showId,
             string $ticketId,
-            string $usedAt
+            string $checkedAt
         ) {
             $this->showId = $showId;
             $this->ticketId = $ticketId;
-            $this->usedAt = $usedAt;
+            $this->checkedAt = $checkedAt;
         }
 
         private const exampleValues = [
             'showId' => 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA',
             'ticketId' => 'ticket:A43CX2',
-            'usedAt' => '2017-05-09 12:05:02.999999+0000',
+            'checkedAt' => '2017-05-09 12:05:02.999999+0000',
         ];
 
         static function withShowId (string $showId): CounterfeitTicketChecked {
@@ -226,7 +226,7 @@ namespace TicketBlaster\ExperimentalTicketChecking {
             return new CounterfeitTicketChecked(
                 $payload['showId'],
                 $payload['ticketId'],
-                $payload['usedAt']
+                $payload['checkedAt']
             );
         }
 
@@ -237,9 +237,9 @@ namespace TicketBlaster\ExperimentalTicketChecking {
             return $modified;
         }
 
-        function andWithUsedAt (string $usedAt): CounterfeitTicketChecked {
+        function andWithCheckedAt (string $checkedAt): CounterfeitTicketChecked {
             $modified = clone $this;
-            $modified->usedAt = $usedAt;
+            $modified->checkedAt = $checkedAt;
 
             return $modified;
         }
@@ -256,17 +256,17 @@ namespace TicketBlaster\ExperimentalTicketChecking {
             return $this->ticketId;
         }
 
-        private $usedAt;
+        private $checkedAt;
 
-        function usedAt (): string {
-            return $this->usedAt;
+        function checkedAt (): string {
+            return $this->checkedAt;
         }
 
         function rawMessagePayload (): array {
             return [
                 'showId' => $this->showId,
                 'ticketId' => $this->ticketId,
-                'usedAt' => $this->usedAt,
+                'checkedAt' => $this->checkedAt,
             ];
         }
     }
