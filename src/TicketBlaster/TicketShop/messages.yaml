@@ -7,3 +7,5 @@ TicketBlaster.TicketShop:
           example: 'ticket:A43CX2'
         soldAt:
           example: '2017-04-12 12:12:01.999999+0000'
+
+  commands: [ ]

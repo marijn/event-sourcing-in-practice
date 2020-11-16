@@ -1,4 +1,3 @@
-Warning: Invalid argument supplied for foreach() in /Users/marijn/Sites/do-it-yourself-event-sourcing-tooling-examples/src/Infra/EventSourcing/CodeGeneration/MessagesCodeGenerator.php on line 242
 <?php declare(strict_types=1);
 /**
  * WARNING! This file has been generated.
