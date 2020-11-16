@@ -18,20 +18,24 @@ namespace TicketBlaster\TicketShop {
 
         /**
          * @param string $ticketId
+         * @param string $showId
          * @param string $soldAt
          *
          * @api
          */
         function __construct (
             string $ticketId,
+            string $showId,
             string $soldAt
         ) {
             $this->ticketId = $ticketId;
+            $this->showId = $showId;
             $this->soldAt = $soldAt;
         }
 
         private const exampleValues = [
             'ticketId' => 'ticket:A43CX2',
+            'showId' => 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA',
             'soldAt' => '2017-04-12 12:12:01.999999+0000',
         ];
 
@@ -45,8 +49,16 @@ namespace TicketBlaster\TicketShop {
         static function fromPayload (array $payload): TicketWasSold {
             return new TicketWasSold(
                 $payload['ticketId'],
+                $payload['showId'],
                 $payload['soldAt']
             );
+        }
+
+        function andWithShowId (string $showId): TicketWasSold {
+            $modified = clone $this;
+            $modified->showId = $showId;
+
+            return $modified;
         }
 
         function andWithSoldAt (string $soldAt): TicketWasSold {
@@ -62,6 +74,12 @@ namespace TicketBlaster\TicketShop {
             return $this->ticketId;
         }
 
+        private $showId;
+
+        function showId (): string {
+            return $this->showId;
+        }
+
         private $soldAt;
 
         function soldAt (): string {
@@ -71,6 +89,7 @@ namespace TicketBlaster\TicketShop {
         function rawMessagePayload (): array {
             return [
                 'ticketId' => $this->ticketId,
+                'showId' => $this->showId,
                 'soldAt' => $this->soldAt,
             ];
         }
