@@ -36,7 +36,7 @@ PHP;
 
                     $eventArgumentCode = rtrim(implode(PHP_EOL, $eventArguments), ',');
                     $commandHandlers[] = <<<PHP
-final class {$handlerName} extends \Acme\Infra\EventSourcing\EventRecordingCommandHandler {
+final class {$handlerName} extends \Infra\EventSourcing\EventRecordingCommandHandler {
     function handle({$commandClassName} \$command): void {
         \$this->recordThat(
             new \\{$event}(

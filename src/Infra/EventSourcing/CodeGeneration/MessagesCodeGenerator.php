@@ -170,7 +170,7 @@ PHP;
 
         return <<<PHP
 {$this->generateMessageDocBlock($eventSpecification)}
-final class {$eventClassName} implements \Acme\Infra\EventSourcing\Event {
+final class {$eventClassName} implements \Infra\EventSourcing\Event {
 {$this->generateMessageConstructor($eventSpecification)}
 {$exampleValueCode}
 {$factoryCode}
@@ -251,7 +251,7 @@ DOCBLOCK;
     private function generateCommand (string $commandClassName, array $commandSpecification): string {
         return <<<PHP
 {$this->generateMessageDocBlock($commandSpecification)}
-final class {$commandClassName} implements \Acme\Infra\EventSourcing\Command {
+final class {$commandClassName} implements \Infra\EventSourcing\Command {
 {$this->generateMessageConstructor($commandSpecification)}
 {$this->generateMessageAttributes($commandSpecification)}
 {$this->generateRawMessagePayload($commandSpecification)}
