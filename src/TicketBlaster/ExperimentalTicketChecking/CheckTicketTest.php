@@ -23,4 +23,9 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
     function Ticket Holder presents issued Ticket that has been used before (): void {
         self::markTestIncomplete();
     }
+
+    /** @test */
+    function Ticket Holder presents issued Ticket that has been used 2 seconds earlier (): void {
+        self::markTestIncomplete();
+    }
 }
