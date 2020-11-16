@@ -33,6 +33,17 @@ TicketBlaster.ExperimentalTicketChecking:
         checkedAt:
           example: '2017-05-09 12:05:02.999999+0000'
 
+    UsedTicketWasChecked:
+      doc: 'When an attempt has been made to use a `Ticket` to visit a `Show` more then once'
+      identifier: showId
+      attributes:
+        showId:
+          example: 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA'
+        ticketId:
+          example: 'ticket:A43CX2'
+        checkedAt:
+          example: '2017-05-09 12:05:02.999999+0000'
+
   commands:
     CheckTicket:
       doc: "Check if the `Ticket` may be used to visit the `Show`."

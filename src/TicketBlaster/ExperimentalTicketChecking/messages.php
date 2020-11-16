@@ -272,6 +272,93 @@ namespace TicketBlaster\ExperimentalTicketChecking {
     }
 
     /**
+     * When an attempt has been made to use a `Ticket` to visit a `Show` more then once
+     *
+     * @api
+     * @category generated
+     */
+    final class UsedTicketWasChecked implements \Infra\EventSourcing\Event {
+
+        /**
+         * @param string $showId
+         * @param string $ticketId
+         * @param string $checkedAt
+         *
+         * @api
+         */
+        function __construct (
+            string $showId,
+            string $ticketId,
+            string $checkedAt
+        ) {
+            $this->showId = $showId;
+            $this->ticketId = $ticketId;
+            $this->checkedAt = $checkedAt;
+        }
+
+        private const exampleValues = [
+            'showId' => 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA',
+            'ticketId' => 'ticket:A43CX2',
+            'checkedAt' => '2017-05-09 12:05:02.999999+0000',
+        ];
+
+        static function withShowId (string $showId): UsedTicketWasChecked {
+            $payload = UsedTicketWasChecked::exampleValues;
+            $payload['showId'] = $showId;
+
+            return UsedTicketWasChecked::fromPayload($payload);
+        }
+
+        static function fromPayload (array $payload): UsedTicketWasChecked {
+            return new UsedTicketWasChecked(
+                $payload['showId'],
+                $payload['ticketId'],
+                $payload['checkedAt']
+            );
+        }
+
+        function andWithTicketId (string $ticketId): UsedTicketWasChecked {
+            $modified = clone $this;
+            $modified->ticketId = $ticketId;
+
+            return $modified;
+        }
+
+        function andWithCheckedAt (string $checkedAt): UsedTicketWasChecked {
+            $modified = clone $this;
+            $modified->checkedAt = $checkedAt;
+
+            return $modified;
+        }
+
+        private $showId;
+
+        function showId (): string {
+            return $this->showId;
+        }
+
+        private $ticketId;
+
+        function ticketId (): string {
+            return $this->ticketId;
+        }
+
+        private $checkedAt;
+
+        function checkedAt (): string {
+            return $this->checkedAt;
+        }
+
+        function rawMessagePayload (): array {
+            return [
+                'showId' => $this->showId,
+                'ticketId' => $this->ticketId,
+                'checkedAt' => $this->checkedAt,
+            ];
+        }
+    }
+
+    /**
      * Check if the `Ticket` may be used to visit the `Show`.
      *
      * @api

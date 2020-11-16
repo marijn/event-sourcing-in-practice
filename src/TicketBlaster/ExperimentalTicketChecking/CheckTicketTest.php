@@ -68,9 +68,38 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
             ->assert();
     }
 
-    /** @test */
-    function Ticket Holder presents issued Ticket that has been used before (): void {
-        self::markTestIncomplete();
+    /**
+     * @test
+     * @dataProvider provide showId ticketId and usedAt
+     */
+    function Ticket Holder presents issued Ticket that has been used before (
+        string $showId,
+        string $ticketId,
+        string $usedAt
+    ): void {
+        $this->scenario
+            ->given(
+                TicketWasIssued
+                    ::withShowId($showId)
+                    ->andWithTicketId($ticketId),
+                TicketWasUsed
+                    ::withShowId($showId)
+                    ->andWithTicketId($ticketId)
+            )
+            ->when(
+                new CheckTicket(
+                    $showId,
+                    $ticketId
+                )
+            )
+            ->then(
+                new UsedTicketWasChecked(
+                    $showId,
+                    $ticketId,
+                    $usedAt
+                )
+            )
+            ->assert();
     }
 
     /** @test */

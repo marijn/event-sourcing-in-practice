@@ -159,18 +159,71 @@
   <h2>TicketBlaster.ExperimentalTicketChecking.CheckTicket</h2>
   <p>Ticket Holder presents issued Ticket that has been used before</p>
 </div>
-<div class="hotspot sticky like-paper">
-  <h2>No preconditions</h2>
-  <p>This scenario is completely autonomous</p>
+<div class="event sticky like-paper">
+    <h2>TicketBlaster.ExperimentalTicketChecking.TicketWasIssued</h2>
+    <table>
+        <tr class="showId">
+            <th>showId</th>
+            <td>show:021eea76-674c-3245-9ff0-5e6999a0d2bd</td>
+        </tr>
+        <tr class="ticketId">
+            <th>ticketId</th>
+            <td>ticket:#f677f9</td>
+        </tr>
+        <tr class="issuedAt">
+            <th>issuedAt</th>
+            <td>...</td>
+        </tr>
+    </table>
 </div>
-<div class="hotspot sticky like-paper">
-  <h2>No command</h2>
-  <p>This scenario is likely incomplete</p>
-</div>
-<div class="hotspot sticky like-paper">
-  <h2>No outcome specified</h2>
-  <p>If this is desired change your test to use `thenNothing` to signal explicitly that nothing should happen.</p>
-</div></article>
+        <div class="event sticky like-paper">
+            <h2>TicketBlaster.ExperimentalTicketChecking.TicketWasUsed</h2>
+            <table>
+                <tr class="showId">
+                    <th>showId</th>
+                    <td>show:021eea76-674c-3245-9ff0-5e6999a0d2bd</td>
+                </tr>
+                <tr class="ticketId">
+                    <th>ticketId</th>
+                    <td>ticket:#f677f9</td>
+                </tr>
+                <tr class="usedAt">
+                    <th>usedAt</th>
+                    <td>...</td>
+                </tr>
+            </table>
+        </div>
+        <div class="command sticky like-paper">
+            <h2>TicketBlaster.ExperimentalTicketChecking.CheckTicket</h2>
+            <table>
+                <tr class="showId">
+                    <th>showId</th>
+                    <td>show:021eea76-674c-3245-9ff0-5e6999a0d2bd</td>
+                </tr>
+                <tr class="ticketId">
+                    <th>ticketId</th>
+                    <td>ticket:#f677f9</td>
+                </tr>
+            </table>
+        </div>
+        <div class="event sticky like-paper">
+            <h2>TicketBlaster.ExperimentalTicketChecking.UsedTicketWasChecked</h2>
+            <table>
+                <tr class="showId">
+                    <th>showId</th>
+                    <td>show:021eea76-674c-3245-9ff0-5e6999a0d2bd</td>
+                </tr>
+                <tr class="ticketId">
+                    <th>ticketId</th>
+                    <td>ticket:#f677f9</td>
+                </tr>
+                <tr class="checkedAt">
+                    <th>checkedAt</th>
+                    <td>2019-12-12T22:25:21.000000+0000</td>
+                </tr>
+            </table>
+        </div>
+    </article>
     <script type="application/javascript">
       document.addEventListener('DOMContentLoaded', function () {
           var tableHeaders = document.querySelectorAll('tr[class] th');
