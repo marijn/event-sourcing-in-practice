@@ -42,9 +42,30 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
             ->assert();
     }
 
-    /** @test */
-    function Ticket Holder presents Ticket that has NOT been issued (): void {
-        self::markTestIncomplete();
+    /**
+     * @test
+     * @dataProvider provide showId ticketId and checkedAt
+     */
+    function Ticket Holder presents Ticket that has NOT been issued (
+        string $showId,
+        string $ticketId,
+        string $checkedAt
+    ): void {
+        $this->scenario
+            ->when(
+                new CheckTicket(
+                    $showId,
+                    $ticketId
+                )
+            )
+            ->then(
+                new CounterfeitTicketChecked(
+                    $showId,
+                    $ticketId,
+                    $checkedAt
+                )
+            )
+            ->assert();
     }
 
     /** @test */
@@ -65,7 +86,19 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                 'showId' => "show:{$faker->uuid}",
                 'ticketId' => "ticket:{$faker->hexColor}",
                 'usedAt' => $faker->dateTimeThisYear('5 seconds ago', 'UTC')->format(Standards::dateTimeFormat),
-            ]
+            ],
+        ];
+    }
+
+    static function provide showId ticketId and checkedAt (): array {
+        $faker = Factory::create();
+
+        return [
+            'with consistent example data' => [
+                'showId' => "show:{$faker->uuid}",
+                'ticketId' => "ticket:{$faker->hexColor}",
+                'checkedAt' => $faker->dateTimeThisYear('5 seconds ago', 'UTC')->format(Standards::dateTimeFormat),
+            ],
         ];
     }
 }

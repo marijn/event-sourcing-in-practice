@@ -22,6 +22,17 @@ TicketBlaster.ExperimentalTicketChecking:
         usedAt:
           example: '2017-05-09 09:05:02.999999+0000'
 
+    CounterfeitTicketChecked:
+      doc: 'When an attempt has been made to use a `Ticket` to visit a `Show` with a counterfeit ticket'
+      identifier: showId
+      attributes:
+        showId:
+          example: 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA'
+        ticketId:
+          example: 'ticket:A43CX2'
+        usedAt:
+          example: '2017-05-09 12:05:02.999999+0000'
+
   commands:
     CheckTicket:
       doc: "Check if the `Ticket` may be used to visit the `Show`."
