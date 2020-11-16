@@ -5,7 +5,5 @@ TicketBlaster.TicketShop:
       attributes:
         ticketId:
           example: 'ticket:A43CX2'
-        showId:
-          example: 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA'
         soldAt:
           example: '2017-04-12 12:12:01.999999+0000'
