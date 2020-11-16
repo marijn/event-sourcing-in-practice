@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Infra\\' => array($baseDir . '/src'),
     'Acme\\' => array($baseDir . '/src'),
+    '\'TicketBlaster\\' => array($baseDir . '/src'),
 );

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'df5c311ebdf07004f5cc3f15f9c1eb0e18e1483e',
+    'reference' => 'cbec4b45432e3be20e497393614edf3c92a5d45c',
     'name' => 'do-it-yourself-event-sourcing-tooling/code-generation-messages',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'df5c311ebdf07004f5cc3f15f9c1eb0e18e1483e',
+      'reference' => 'cbec4b45432e3be20e497393614edf3c92a5d45c',
     ),
     'fzaninotto/faker' => 
     array (

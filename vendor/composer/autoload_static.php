@@ -13,6 +13,7 @@ class ComposerStaticInite249306b8c7ac427060268586f916aff
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
         'e050abfbc8f56b7048f9dd6785c2704d' => __DIR__ . '/../..' . '/src/Acme/OnlineShop/messages.php',
+        '48bb15a0f9a210030efaa4d3bdb30c04' => __DIR__ . '/../..' . '/src/TicketBlaster/ExperimentalTicketChecking/messages.php',
         'beae2941192c6ea988571aac70dbe0d4' => __DIR__ . '/../..' . '/src/Acme/OnlineShop/handlers.php',
         'd61a0ecea24ba75db136c3120cd9fde9' => __DIR__ . '/../..' . '/src/Infra/EventSourcing/functions.php',
         'bd2e3289d3e224171165b0205688d1c1' => __DIR__ . '/../..' . '/src/Infra/UI/functions.php',
@@ -147,6 +148,13 @@ class ComposerStaticInite249306b8c7ac427060268586f916aff
         'A' => 
         array (
             'Acme\\' => 
+            array (
+                0 => __DIR__ . '/../..' . '/src',
+            ),
+        ),
+        '\'' => 
+        array (
+            '\'TicketBlaster\\' => 
             array (
                 0 => __DIR__ . '/../..' . '/src',
             ),

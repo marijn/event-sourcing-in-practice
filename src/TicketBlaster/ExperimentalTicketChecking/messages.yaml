@@ -1,0 +1,30 @@
+TicketBlaster.ExperimentalTicketChecking:
+  events:
+    TicketWasIssued:
+      doc: 'When the `Ticket` has been assigned the right to visit the `Show`'
+      identifier: showId
+      attributes:
+        showId:
+          example: 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA'
+        ticketId:
+          example: 'ticket:A43CX2'
+        issuedAt:
+          example: '2017-05-09 09:05:02.999999+0000'
+
+    TicketWasUsed:
+      doc: 'When the `Ticket` has been used to visit the `Show`'
+      identifier: showId
+      attributes:
+        showId:
+          example: 'show:AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA'
+        ticketId:
+          example: 'ticket:A43CX2'
+        usedAt:
+          example: '2017-05-09 09:05:02.999999+0000'
+
+  commands:
+    CheckTicket:
+      doc: "Check if the `Ticket` may be used to visit the `Show`."
+      attributes:
+        showId: ~
+        ticketId: ~

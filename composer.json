@@ -29,10 +29,12 @@
   "autoload": {
     "psr-0": {
       "Acme\\": ["src/"],
-      "Infra\\": ["src/"]
+      "Infra\\": ["src/"],
+      "'TicketBlaster\\": ["src/"]
     },
     "files": [
       "src/Acme/OnlineShop/messages.php",
+      "src/TicketBlaster/ExperimentalTicketChecking/messages.php",
       "src/Acme/OnlineShop/handlers.php",
       "src/Infra/EventSourcing/functions.php",
       "src/Infra/UI/functions.php"
