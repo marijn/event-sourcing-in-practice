@@ -3,14 +3,14 @@
 namespace Infra\EventSourcing;
 
 use Infra\EventSourcing\CommandHandler;
-use Infra\EventSourcing\Event;
+use Infra\EventSourcing\DomainEvent;
 
 /**
  * @copyright Marijn Huizendveld 2018. All rights reserved.
  */
 abstract class EventRecordingCommandHandler implements CommandHandler {
 
-    function recordThat (Event $event): void {
+    function recordThat (DomainEvent $event): void {
         // TODO: Record that the event happened
     }
 }

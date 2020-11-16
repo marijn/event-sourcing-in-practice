@@ -3,7 +3,7 @@
 namespace Infra\EventSourcing\Testing;
 
 use Infra\EventSourcing\Command;
-use Infra\EventSourcing\Event;
+use Infra\EventSourcing\DomainEvent;
 use Infra\Testing\ScenarioVisualization\VisualScenario;
 use Infra\Testing\ScenarioVisualization\StepDescription;
 use Infra\Testing\TestScenario;
@@ -29,19 +29,19 @@ final class ProcessManagerScenario implements TestScenario {
         );
     }
 
-    function given (Event ...$events): ProcessManagerScenario {
+    function given (DomainEvent ...$events): ProcessManagerScenario {
         $this->given = StepDescription::forEvents(... $events);
 
         return $this;
     }
 
-    function when (Event $event): ProcessManagerScenario {
+    function when (DomainEvent $event): ProcessManagerScenario {
         $this->when = StepDescription::forEvent($event);;
 
         return $this;
     }
 
-    function thenEvent (Event $event): ProcessManagerScenario {
+    function thenEvent (DomainEvent $event): ProcessManagerScenario {
         $this->then = StepDescription::forEvent($event);
 
         return $this;

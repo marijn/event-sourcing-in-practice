@@ -14,7 +14,7 @@ namespace TicketBlaster\TicketShop {
      * @api
      * @category generated
      */
-    final class TicketWasSold implements \Infra\EventSourcing\Event {
+    final class TicketWasSold implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $ticketId

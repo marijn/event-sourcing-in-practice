@@ -7,6 +7,6 @@ use Infra\EventSourcing\Message;
 /**
  * @copyright Marijn Huizendveld 2018. All rights reserved.
  */
-interface Event extends Message {
+interface DomainEvent extends Message {
 
 }

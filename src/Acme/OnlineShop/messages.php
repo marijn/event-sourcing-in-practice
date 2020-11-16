@@ -16,7 +16,7 @@ namespace Acme\OnlineShop {
      * @api
      * @category generated
      */
-    final class CustomerStartedShopping implements \Infra\EventSourcing\Event {
+    final class CustomerStartedShopping implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $cartId
@@ -82,7 +82,7 @@ namespace Acme\OnlineShop {
      * @api
      * @category generated
      */
-    final class ProductWasAddedToCart implements \Infra\EventSourcing\Event {
+    final class ProductWasAddedToCart implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $cartId
@@ -205,7 +205,7 @@ namespace Acme\OnlineShop {
      * @api
      * @category generated
      */
-    final class ProductWasRemovedFromCart implements \Infra\EventSourcing\Event {
+    final class ProductWasRemovedFromCart implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $cartId
@@ -328,7 +328,7 @@ namespace Acme\OnlineShop {
      * @api
      * @category generated
      */
-    final class CustomerPlacedOrder implements \Infra\EventSourcing\Event {
+    final class CustomerPlacedOrder implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $cartId
@@ -469,7 +469,7 @@ namespace Acme\OnlineShop {
      * @api
      * @category generated
      */
-    final class CustomerAbandonedCart implements \Infra\EventSourcing\Event {
+    final class CustomerAbandonedCart implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $cartId

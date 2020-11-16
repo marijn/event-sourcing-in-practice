@@ -16,7 +16,7 @@ namespace TicketBlaster\ExperimentalTicketChecking {
      * @api
      * @category generated
      */
-    final class TicketWasIssued implements \Infra\EventSourcing\Event {
+    final class TicketWasIssued implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $showId
@@ -103,7 +103,7 @@ namespace TicketBlaster\ExperimentalTicketChecking {
      * @api
      * @category generated
      */
-    final class TicketWasUsed implements \Infra\EventSourcing\Event {
+    final class TicketWasUsed implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $showId
@@ -190,7 +190,7 @@ namespace TicketBlaster\ExperimentalTicketChecking {
      * @api
      * @category generated
      */
-    final class CounterfeitTicketChecked implements \Infra\EventSourcing\Event {
+    final class CounterfeitTicketChecked implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $showId
@@ -277,7 +277,7 @@ namespace TicketBlaster\ExperimentalTicketChecking {
      * @api
      * @category generated
      */
-    final class UsedTicketWasChecked implements \Infra\EventSourcing\Event {
+    final class UsedTicketWasChecked implements \Infra\EventSourcing\DomainEvent {
 
         /**
          * @param string $showId

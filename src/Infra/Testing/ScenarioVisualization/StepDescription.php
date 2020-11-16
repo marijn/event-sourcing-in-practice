@@ -3,7 +3,7 @@
 namespace Infra\Testing\ScenarioVisualization;
 
 use Infra\EventSourcing\Command;
-use Infra\EventSourcing\Event;
+use Infra\EventSourcing\DomainEvent;
 use Infra\Testing\ScenarioVisualization\CommandDescription;
 use Infra\Testing\ScenarioVisualization\EventDescription;
 use Infra\Testing\ScenarioVisualization\EventsDescription;
@@ -15,11 +15,25 @@ use Infra\Testing\ScenarioVisualization\ScenarioDescription;
  */
 abstract class StepDescription {
 
-    static function forEvent (Event $event): StepDescription { return new EventDescription($event); }
-    static function forEvents (Event ... $event): StepDescription { return new EventsDescription(... $event); }
-    static function forCommand (Command $command): StepDescription { return new CommandDescription($command); }
-    static function forHotspot (string $hotspot, string $detail): StepDescription { return new HotspotDescription($hotspot, $detail); }
-    static function forScenario (string $scenario, string $detail): StepDescription { return new ScenarioDescription($scenario, $detail); }
+    static function forEvent (DomainEvent $event): StepDescription {
+        return new EventDescription($event);
+    }
+
+    static function forEvents (DomainEvent ...$event): StepDescription {
+        return new EventsDescription(... $event);
+    }
+
+    static function forCommand (Command $command): StepDescription {
+        return new CommandDescription($command);
+    }
+
+    static function forHotspot (string $hotspot, string $detail): StepDescription {
+        return new HotspotDescription($hotspot, $detail);
+    }
+
+    static function forScenario (string $scenario, string $detail): StepDescription {
+        return new ScenarioDescription($scenario, $detail);
+    }
 
     protected static function dataToHtml (array $data): string {
         return self::hasNumericKeys($data) ? self::dataToHtmlList($data) : self::dataToHtmlTable($data);
