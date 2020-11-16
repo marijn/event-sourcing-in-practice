@@ -5,7 +5,7 @@
 $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
-return array(
+return [
     'ce30818c35dfce0b74f3d34a4027ae2a' => $vendorDir . '/http-interop/http-server-middleware/src/alias.php',
     '253c157292f75eb38082b5acb06f3f01' => $vendorDir . '/nikic/fast-route/src/functions.php',
     '5255c38a0faeba867671b61dfda6d864' => $vendorDir . '/paragonie/random_compat/lib/random.php',
@@ -13,7 +13,8 @@ return array(
     '65fec9ebcfbb3cbb4fd0d519687aea01' => $vendorDir . '/danielstjules/stringy/src/Create.php',
     'e050abfbc8f56b7048f9dd6785c2704d' => $baseDir . '/src/Acme/OnlineShop/messages.php',
     '48bb15a0f9a210030efaa4d3bdb30c04' => $baseDir . '/src/TicketBlaster/ExperimentalTicketChecking/messages.php',
+    'ea3b65310fa0e9ab00737ed5e1743985' => $baseDir . '/src/TicketBlaster/TicketShop/messages.php',
     'beae2941192c6ea988571aac70dbe0d4' => $baseDir . '/src/Acme/OnlineShop/handlers.php',
     'd61a0ecea24ba75db136c3120cd9fde9' => $baseDir . '/src/Infra/EventSourcing/functions.php',
     'bd2e3289d3e224171165b0205688d1c1' => $baseDir . '/src/Infra/UI/functions.php',
-);
+];

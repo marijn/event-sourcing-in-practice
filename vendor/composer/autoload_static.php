@@ -6,7 +6,7 @@ namespace Composer\Autoload;
 
 class ComposerStaticInite249306b8c7ac427060268586f916aff
 {
-    public static $files = array (
+    public static $files = [
         'ce30818c35dfce0b74f3d34a4027ae2a' => __DIR__ . '/..' . '/http-interop/http-server-middleware/src/alias.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -14,10 +14,11 @@ class ComposerStaticInite249306b8c7ac427060268586f916aff
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
         'e050abfbc8f56b7048f9dd6785c2704d' => __DIR__ . '/../..' . '/src/Acme/OnlineShop/messages.php',
         '48bb15a0f9a210030efaa4d3bdb30c04' => __DIR__ . '/../..' . '/src/TicketBlaster/ExperimentalTicketChecking/messages.php',
+        'ea3b65310fa0e9ab00737ed5e1743985' => __DIR__ . '/../..' . '/src/TicketBlaster/TicketShop/messages.php',
         'beae2941192c6ea988571aac70dbe0d4' => __DIR__ . '/../..' . '/src/Acme/OnlineShop/handlers.php',
         'd61a0ecea24ba75db136c3120cd9fde9' => __DIR__ . '/../..' . '/src/Infra/EventSourcing/functions.php',
         'bd2e3289d3e224171165b0205688d1c1' => __DIR__ . '/../..' . '/src/Infra/UI/functions.php',
-    );
+    ];
 
     public static $prefixLengthsPsr4 = array (
         'm' => 

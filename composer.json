@@ -35,6 +35,7 @@
     "files": [
       "src/Acme/OnlineShop/messages.php",
       "src/TicketBlaster/ExperimentalTicketChecking/messages.php",
+      "src/TicketBlaster/TicketShop/messages.php",
       "src/Acme/OnlineShop/handlers.php",
       "src/Infra/EventSourcing/functions.php",
       "src/Infra/UI/functions.php"

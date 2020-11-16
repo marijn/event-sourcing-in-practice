@@ -1,13 +1,12 @@
 <?php return array (
   'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
-    ),
-    'reference' => 'cbec4b45432e3be20e497393614edf3c92a5d45c',
-    'name' => 'do-it-yourself-event-sourcing-tooling/code-generation-messages',
+  array(
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' =>
+          array(),
+      'reference' => 'b44fda06cac42fd525ea3451c79d27fcb2b0aab1',
+      'name' => 'do-it-yourself-event-sourcing-tooling/code-generation-messages',
   ),
   'versions' => 
   array (
@@ -20,15 +19,14 @@
       ),
       'reference' => 'df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e',
     ),
-    'do-it-yourself-event-sourcing-tooling/code-generation-messages' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'cbec4b45432e3be20e497393614edf3c92a5d45c',
-    ),
+    'do-it-yourself-event-sourcing-tooling/code-generation-messages' =>
+        array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'aliases' =>
+                array(),
+            'reference' => 'b44fda06cac42fd525ea3451c79d27fcb2b0aab1',
+        ),
     'fzaninotto/faker' => 
     array (
       'pretty_version' => 'v1.7.1',
