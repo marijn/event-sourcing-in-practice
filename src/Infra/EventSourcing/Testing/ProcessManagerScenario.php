@@ -35,8 +35,8 @@ final class ProcessManagerScenario implements TestScenario {
         return $this;
     }
 
-    function when (Command $command): ProcessManagerScenario {
-        $this->when = StepDescription::forCommand($command);;
+    function when (Event $event): ProcessManagerScenario {
+        $this->when = StepDescription::forEvent($event);;
 
         return $this;
     }
