@@ -158,7 +158,7 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
                 CustomerPlacedOrder::withCartId($cartId)
                     ->andWithOrderId($orderId)
                     ->andWithOrderLines($orderLines)
-                    ->andWithPlacedAt($placedAt)
+                    ->andWithOrderedAt($placedAt)
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
             ->thenNothing()
