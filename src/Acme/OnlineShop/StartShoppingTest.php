@@ -18,8 +18,7 @@ final class StartShoppingTest extends EventSourcedCommandHandlerTestCase {
     function CustomerStartedShopping when StartShopping (string $cartId, string $startedAt): void {
         $this->scenario
             ->when(new StartShopping($cartId, $startedAt))
-            ->then(new CustomerStartedShopping($cartId, $startedAt))
-            ->assert();
+            ->then(new CustomerStartedShopping($cartId, $startedAt));
     }
 
     /**
@@ -30,8 +29,7 @@ final class StartShoppingTest extends EventSourcedCommandHandlerTestCase {
         $this->scenario
             ->given(CustomerStartedShopping::withCartId($cartId))
             ->when(new StartShopping($cartId, $startedAt))
-            ->thenNothing()
-            ->assert();
+            ->thenNothing();
     }
 
     static public function provide cartId and startedAt(): array {

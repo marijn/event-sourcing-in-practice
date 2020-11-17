@@ -27,8 +27,7 @@ final class AddProductToCartTest extends EventSourcedCommandHandlerTestCase {
                 CustomerStartedShopping::withCartId($cartId)
             )
             ->when(new AddProductToCart($cartId, $sku, $priceInCents, $currency, $addedAt))
-            ->then(new ProductWasAddedToCart($cartId, $sku, $priceInCents, $currency, $addedAt))
-            ->assert();
+            ->then(new ProductWasAddedToCart($cartId, $sku, $priceInCents, $currency, $addedAt));
     }
 
     /**
@@ -53,8 +52,7 @@ final class AddProductToCartTest extends EventSourcedCommandHandlerTestCase {
                     ->andWithAddedAt($addedAt)
             )
             ->when(new AddProductToCart($cartId, $sku, $priceInCents, $currency, $addedAt))
-            ->thenNothing()
-            ->assert();
+            ->thenNothing();
     }
 
     static public function provide cartId sku priceInCents currency and addedAt(): array {

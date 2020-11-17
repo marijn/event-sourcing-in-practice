@@ -55,8 +55,7 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
                     ->andWithCurrency($currency)
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
-            ->then(new CustomerPlacedOrder($cartId, $customerId, $orderId, $orderLines, $placedAt))
-            ->assert();
+            ->then(new CustomerPlacedOrder($cartId, $customerId, $orderId, $orderLines, $placedAt));
     }
 
     /**
@@ -108,8 +107,7 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
                     ->andWithCurrency($currency)
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
-            ->then(new CustomerPlacedOrder($cartId, $customerId, $orderId, $orderLines, $placedAt))
-            ->assert();
+            ->then(new CustomerPlacedOrder($cartId, $customerId, $orderId, $orderLines, $placedAt));
     }
 
     /**
@@ -161,7 +159,6 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
                     ->andWithOrderedAt($placedAt)
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
-            ->thenNothing()
-            ->assert();
+            ->thenNothing();
     }
 }

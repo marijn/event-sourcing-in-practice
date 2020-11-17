@@ -32,8 +32,7 @@ final class RemoveProductFromCartTest extends EventSourcedCommandHandlerTestCase
                     ->andWithCurrency($currency)
             )
             ->when(new RemoveProductFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
-            ->then(new ProductWasRemovedFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
-            ->assert();
+            ->then(new ProductWasRemovedFromCart($cartId, $sku, $priceInCents, $currency, $removedAt));
     }
 
     /**
@@ -62,8 +61,7 @@ final class RemoveProductFromCartTest extends EventSourcedCommandHandlerTestCase
                     ->andWithCurrency($currency)
             )
             ->when(new RemoveProductFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
-            ->thenNothing()
-            ->assert();
+            ->thenNothing();
     }
 
     /**
@@ -82,8 +80,7 @@ final class RemoveProductFromCartTest extends EventSourcedCommandHandlerTestCase
                 CustomerStartedShopping::withCartId($cartId)
             )
             ->when(new RemoveProductFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
-            ->thenNothing()
-            ->assert();
+            ->thenNothing();
     }
 
     static public function provide cartId sku priceInCents currency and removedAt(): array {
