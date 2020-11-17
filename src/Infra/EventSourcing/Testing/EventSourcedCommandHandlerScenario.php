@@ -48,8 +48,12 @@ final class EventSourcedCommandHandlerScenario implements TestScenario {
         return $this;
     }
 
-    /** @throws \PHPUnit\Framework\AssertionFailedError */
-    function assert (): void {
+    /**
+     * @param callable $subjectUnderTest
+     *
+     * @throws \PHPUnit\Framework\AssertionFailedError
+     */
+    function assert (callable $subjectUnderTest): void {
         // TODO: Implement assert() method.
 
         throw new AssertionFailedError('Not yet implemented');

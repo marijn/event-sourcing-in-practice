@@ -33,7 +33,7 @@ final class RemoveProductFromCartTest extends EventSourcedCommandHandlerTestCase
             )
             ->when(new RemoveProductFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
             ->then(new ProductWasRemovedFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
-            ->assert();
+            ->assert(function () { });
     }
 
     /**
@@ -63,7 +63,7 @@ final class RemoveProductFromCartTest extends EventSourcedCommandHandlerTestCase
             )
             ->when(new RemoveProductFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
             ->thenNothing()
-            ->assert();
+            ->assert(function () { });
     }
 
     /**
@@ -83,7 +83,7 @@ final class RemoveProductFromCartTest extends EventSourcedCommandHandlerTestCase
             )
             ->when(new RemoveProductFromCart($cartId, $sku, $priceInCents, $currency, $removedAt))
             ->thenNothing()
-            ->assert();
+            ->assert(function () { });
     }
 
     static public function provide cartId sku priceInCents currency and removedAt(): array {

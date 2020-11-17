@@ -8,8 +8,13 @@ use Infra\Testing\ScenarioVisualization\VisualScenario;
  * @copyright Marijn Huizendveld 2018. All rights reserved.
  */
 interface TestScenario {
-    /** @throws \PHPUnit\Framework\AssertionFailedError */
-    function assert(): void;
+
+    /**
+     * @param callable $subjectUnderTest
+     *
+     * @throws \PHPUnit\Framework\AssertionFailedError
+     */
+    function assert (callable $subjectUnderTest): void;
 
     function visualScenario(): VisualScenario;
 }

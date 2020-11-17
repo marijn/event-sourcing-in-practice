@@ -56,7 +56,7 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
             ->then(new CustomerPlacedOrder($cartId, $customerId, $orderId, $orderLines, $placedAt))
-            ->assert();
+            ->assert(function () { });
     }
 
     /**
@@ -109,7 +109,7 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
             ->then(new CustomerPlacedOrder($cartId, $customerId, $orderId, $orderLines, $placedAt))
-            ->assert();
+            ->assert(function () { });
     }
 
     /**
@@ -162,6 +162,6 @@ final class PlaceOrderTest extends EventSourcedCommandHandlerTestCase {
             )
             ->when(new PlaceOrder($cartId, $customerId, $placedAt))
             ->thenNothing()
-            ->assert();
+            ->assert(function () { });
     }
 }
