@@ -34,7 +34,7 @@ final class IssueTicketTest extends ProcessManagerTestCase {
                     $issuedAt
                 )
             )
-            ->assert();
+            ->assert(function () { });
     }
 
     static function provide ticketId showId and issuedAt (): array {

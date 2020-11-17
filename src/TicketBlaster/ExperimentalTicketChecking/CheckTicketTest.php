@@ -39,7 +39,7 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     $usedAt
                 )
             )
-            ->assert();
+            ->assert(function () { });
     }
 
     /**
@@ -65,7 +65,7 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     $checkedAt
                 )
             )
-            ->assert();
+            ->assert(function () { });
     }
 
     /**
@@ -99,7 +99,7 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     $usedAt
                 )
             )
-            ->assert();
+            ->assert(function () { });
     }
 
     /** @test */
