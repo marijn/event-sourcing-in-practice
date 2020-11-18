@@ -2,13 +2,9 @@
 
 namespace Infra\EventSourcing\Testing;
 
-use Infra\Clock\ClockForTesting;
 use Infra\Clock\PointInTime;
 use Infra\EventSourcing\Command;
-use Infra\EventSourcing\CommandHandler;
 use Infra\EventSourcing\DomainEvent;
-use Infra\EventSourcing\Events;
-use Infra\EventSourcing\InMemoryEventStore;
 use Infra\Testing\ScenarioVisualization\VisualScenario;
 use Infra\Testing\ScenarioVisualization\StepDescription;
 use Infra\Testing\TestScenario;
@@ -74,33 +70,9 @@ final class EventSourcedCommandHandlerScenario implements TestScenario {
      * @throws \PHPUnit\Framework\AssertionFailedError
      */
     function assert (callable $subjectUnderTest): void {
-        $clock = new ClockForTesting($this->timeAssumption);
-        $eventStore = new TestingEventStore(new InMemoryEventStore());
-        $commandHandler = $subjectUnderTest($eventStore, $clock);
-
-        if ( ! $commandHandler instanceof CommandHandler)
-        {
-            throw new AssertionFailedError(
-                'You made an error in the setup. The factory provided to the `assert` method did not return a `CommandHandler` instance. Possibly you experience runtime issues like classes that cannot be loaded.'
-            );
-        }
-
-        if ( ! method_exists($commandHandler, 'handle'))
-        {
-            throw new AssertionFailedError(
-                'You made an error in the setup. The subject under test does not implement a `handle` method.'
-            );
-        }
-
-        $eventStore->commit(new Events(... $this->preConditions));
-        $eventStore->trackNewEvents();
-
-        $commandHandler->handle($this->action);
-
-        $expectedEvents = $this->outcomes;
-        $actualEvents = iterator_to_array($eventStore->newEvents());
-
-        assertThat($actualEvents, equalTo($expectedEvents));
+        throw new AssertionFailedError(
+            'Not yet implemented'
+        );
     }
 
     function visualScenario (): VisualScenario {
