@@ -178,6 +178,9 @@ final class {$eventClassName} implements \Infra\EventSourcing\DomainEvent {
 {$modifierCode}
 {$this->generateMessageAttributes($eventSpecification)}
 {$this->generateRawMessagePayload($eventSpecification)}
+function EventStreamId(): \Infra\EventSourcing\EventStreamId { 
+    return \Infra\EventSourcing\EventStreamId::fromString(\$this->{$identifier}); 
+}
 }
 PHP;
     }

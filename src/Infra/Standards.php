@@ -7,5 +7,5 @@ namespace Infra;
  */
 final class Standards {
 
-    const dateTimeFormat = 'Y-m-d\TH:i:s.uO';
+    const dateTimeFormat = 'Y-m-d H:i:s.uO';
 }

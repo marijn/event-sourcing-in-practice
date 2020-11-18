@@ -24,7 +24,8 @@
     "middlewares/request-handler": "PSR-7/PSR-15 HTTP middleware required to make the Nikic Fastroute middleware work (exact version because its 0.x version)",
     "middlewares/request-handler": "0.5.0",
     "zendframework/zend-diactoros": "HTTP message library for processing HTTP requests on the server (patch releases allowed because the vendor is reliable)",
-    "zendframework/zend-diactoros": "^1.4.0"
+    "zendframework/zend-diactoros": "^1.4.0",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-0": {
