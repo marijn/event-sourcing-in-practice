@@ -9,4 +9,5 @@ use Infra\EventSourcing\Message;
  */
 interface DomainEvent extends Message {
 
+    function EventStreamId(): EventStreamId;
 }

@@ -9,46 +9,40 @@
  */
 
 namespace Acme\OnlineShop {
-
-    final class Handles_StartShopping extends \Infra\EventSourcing\EventRecordingCommandHandler {
-
-        function handle (StartShopping $command): void {
-            $this->recordThat(
-                new \Acme\OnlineShop\CustomerStartedShopping(
-                    $command->cartId(),
-                    $command->startedAt()
-                )
-            );
-        }
+final class Handles_StartShopping extends \Infra\EventSourcing\EventRecordingCommandHandler {
+    function handle(StartShopping $command): void {
+        $this->recordThat(
+            new \Acme\OnlineShop\CustomerStartedShopping(
+                $command->cartId(),
+$command->startedAt()
+            )
+        );
     }
-
-    final class Handles_AddProductToCart extends \Infra\EventSourcing\EventRecordingCommandHandler {
-
-        function handle (AddProductToCart $command): void {
-            $this->recordThat(
-                new \Acme\OnlineShop\ProductWasAddedToCart(
-                    $command->cartId(),
-                    $command->sku(),
-                    $command->priceInCents(),
-                    $command->currency(),
-                    $command->addedAt()
-                )
-            );
-        }
+}
+final class Handles_AddProductToCart extends \Infra\EventSourcing\EventRecordingCommandHandler {
+    function handle(AddProductToCart $command): void {
+        $this->recordThat(
+            new \Acme\OnlineShop\ProductWasAddedToCart(
+                $command->cartId(),
+$command->sku(),
+$command->priceInCents(),
+$command->currency(),
+$command->addedAt()
+            )
+        );
     }
-
-    final class Handles_RemoveProductFromCart extends \Infra\EventSourcing\EventRecordingCommandHandler {
-
-        function handle (RemoveProductFromCart $command): void {
-            $this->recordThat(
-                new \Acme\OnlineShop\ProductWasRemovedFromCart(
-                    $command->cartId(),
-                    $command->sku(),
-                    $command->priceInCents(),
-                    $command->currency(),
-                    $command->removedAt()
-                )
-            );
-        }
+}
+final class Handles_RemoveProductFromCart extends \Infra\EventSourcing\EventRecordingCommandHandler {
+    function handle(RemoveProductFromCart $command): void {
+        $this->recordThat(
+            new \Acme\OnlineShop\ProductWasRemovedFromCart(
+                $command->cartId(),
+$command->sku(),
+$command->priceInCents(),
+$command->currency(),
+$command->removedAt()
+            )
+        );
     }
+}
 }

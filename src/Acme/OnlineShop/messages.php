@@ -60,21 +60,21 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $startedAt;
 
-        function startedAt (): string {
-            return $this->startedAt;
-        }
+        function startedAt (): string { return $this->startedAt; }
 
         function rawMessagePayload (): array {
             return [
                 'cartId' => $this->cartId,
                 'startedAt' => $this->startedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->cartId);
         }
     }
 
@@ -162,33 +162,23 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $sku;
 
-        function sku (): string {
-            return $this->sku;
-        }
+        function sku (): string { return $this->sku; }
 
         private $priceInCents;
 
-        function priceInCents (): int {
-            return $this->priceInCents;
-        }
+        function priceInCents (): int { return $this->priceInCents; }
 
         private $currency;
 
-        function currency (): string {
-            return $this->currency;
-        }
+        function currency (): string { return $this->currency; }
 
         private $addedAt;
 
-        function addedAt (): string {
-            return $this->addedAt;
-        }
+        function addedAt (): string { return $this->addedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -198,6 +188,10 @@ namespace Acme\OnlineShop {
                 'currency' => $this->currency,
                 'addedAt' => $this->addedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->cartId);
         }
     }
 
@@ -285,33 +279,23 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $sku;
 
-        function sku (): string {
-            return $this->sku;
-        }
+        function sku (): string { return $this->sku; }
 
         private $priceInCents;
 
-        function priceInCents (): int {
-            return $this->priceInCents;
-        }
+        function priceInCents (): int { return $this->priceInCents; }
 
         private $currency;
 
-        function currency (): string {
-            return $this->currency;
-        }
+        function currency (): string { return $this->currency; }
 
         private $removedAt;
 
-        function removedAt (): string {
-            return $this->removedAt;
-        }
+        function removedAt (): string { return $this->removedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -321,6 +305,10 @@ namespace Acme\OnlineShop {
                 'currency' => $this->currency,
                 'removedAt' => $this->removedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->cartId);
         }
     }
 
@@ -424,33 +412,23 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $customerId;
 
-        function customerId (): string {
-            return $this->customerId;
-        }
+        function customerId (): string { return $this->customerId; }
 
         private $orderId;
 
-        function orderId (): string {
-            return $this->orderId;
-        }
+        function orderId (): string { return $this->orderId; }
 
         private $orderLines;
 
-        function orderLines (): array {
-            return $this->orderLines;
-        }
+        function orderLines (): array { return $this->orderLines; }
 
         private $orderedAt;
 
-        function orderedAt (): string {
-            return $this->orderedAt;
-        }
+        function orderedAt (): string { return $this->orderedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -460,6 +438,10 @@ namespace Acme\OnlineShop {
                 'orderLines' => $this->orderLines,
                 'orderedAt' => $this->orderedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->cartId);
         }
     }
 
@@ -513,21 +495,21 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $abandonedAt;
 
-        function abandonedAt (): string {
-            return $this->abandonedAt;
-        }
+        function abandonedAt (): string { return $this->abandonedAt; }
 
         function rawMessagePayload (): array {
             return [
                 'cartId' => $this->cartId,
                 'abandonedAt' => $this->abandonedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->cartId);
         }
     }
 
@@ -555,15 +537,11 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $startedAt;
 
-        function startedAt (): string {
-            return $this->startedAt;
-        }
+        function startedAt (): string { return $this->startedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -604,33 +582,23 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $sku;
 
-        function sku (): string {
-            return $this->sku;
-        }
+        function sku (): string { return $this->sku; }
 
         private $priceInCents;
 
-        function priceInCents (): int {
-            return $this->priceInCents;
-        }
+        function priceInCents (): int { return $this->priceInCents; }
 
         private $currency;
 
-        function currency (): string {
-            return $this->currency;
-        }
+        function currency (): string { return $this->currency; }
 
         private $addedAt;
 
-        function addedAt (): string {
-            return $this->addedAt;
-        }
+        function addedAt (): string { return $this->addedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -674,33 +642,23 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $sku;
 
-        function sku (): string {
-            return $this->sku;
-        }
+        function sku (): string { return $this->sku; }
 
         private $priceInCents;
 
-        function priceInCents (): int {
-            return $this->priceInCents;
-        }
+        function priceInCents (): int { return $this->priceInCents; }
 
         private $currency;
 
-        function currency (): string {
-            return $this->currency;
-        }
+        function currency (): string { return $this->currency; }
 
         private $removedAt;
 
-        function removedAt (): string {
-            return $this->removedAt;
-        }
+        function removedAt (): string { return $this->removedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -738,21 +696,15 @@ namespace Acme\OnlineShop {
 
         private $cartId;
 
-        function cartId (): string {
-            return $this->cartId;
-        }
+        function cartId (): string { return $this->cartId; }
 
         private $customerId;
 
-        function customerId (): string {
-            return $this->customerId;
-        }
+        function customerId (): string { return $this->customerId; }
 
         private $orderedAt;
 
-        function orderedAt (): string {
-            return $this->orderedAt;
-        }
+        function orderedAt (): string { return $this->orderedAt; }
 
         function rawMessagePayload (): array {
             return [
