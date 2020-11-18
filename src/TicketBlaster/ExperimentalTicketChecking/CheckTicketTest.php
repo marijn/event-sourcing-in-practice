@@ -3,6 +3,11 @@
 namespace TicketBlaster\ExperimentalTicketChecking;
 
 use Faker\Factory;
+use Infra\Clock\Clock;
+use Infra\Clock\PointInTime;
+use Infra\EventSourcing\CommandHandler;
+use Infra\EventSourcing\Events;
+use Infra\EventSourcing\EventStore;
 use Infra\EventSourcing\Testing\EventSourcedCommandHandlerTestCase;
 use Infra\Standards;
 
@@ -26,6 +31,7 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     ::withShowId($showId)
                     ->andWithTicketId($ticketId)
             )
+            ->assumingItIsNow(PointInTime::fromString($usedAt))
             ->when(
                 new CheckTicket(
                     $showId,
@@ -39,7 +45,9 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     $usedAt
                 )
             )
-            ->assert(function () { });
+            ->assert(function (EventStore $eventStore, Clock $clock) {
+                return new CheckTicketCommandHandler($eventStore, $clock);
+            });
     }
 
     /**
@@ -52,6 +60,7 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
         string $checkedAt
     ): void {
         $this->scenario
+            ->assumingItIsNow(PointInTime::fromString($checkedAt))
             ->when(
                 new CheckTicket(
                     $showId,
@@ -65,7 +74,9 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     $checkedAt
                 )
             )
-            ->assert(function () { });
+            ->assert(function (EventStore $eventStore, Clock $clock) {
+                return new CheckTicketCommandHandler($eventStore, $clock);
+            });
     }
 
     /**
@@ -86,6 +97,7 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     ::withShowId($showId)
                     ->andWithTicketId($ticketId)
             )
+            ->assumingItIsNow(PointInTime::fromString($usedAt))
             ->when(
                 new CheckTicket(
                     $showId,
@@ -99,7 +111,9 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                     $usedAt
                 )
             )
-            ->assert(function () { });
+            ->assert(function (EventStore $eventStore, Clock $clock) {
+                return new CheckTicketCommandHandler($eventStore, $clock);
+            });
     }
 
     /** @test */
@@ -129,5 +143,28 @@ final class CheckTicketTest extends EventSourcedCommandHandlerTestCase {
                 'checkedAt' => $faker->dateTimeThisYear('5 seconds ago', 'UTC')->format(Standards::dateTimeFormat),
             ],
         ];
+    }
+}
+
+final class CheckTicketCommandHandler implements CommandHandler {
+
+    private $eventStore;
+    private $clock;
+
+    function __construct (EventStore $eventStore, Clock $clock) {
+        $this->eventStore = $eventStore;
+        $this->clock = $clock;
+    }
+
+    function handle(CheckTicket $command): void {
+        $events = new Events(
+            new TicketWasUsed(
+                $command->showId(),
+                $command->ticketId(),
+                (string) $this->clock->now()
+            )
+        );
+
+        $this->eventStore->commit($events);
     }
 }
