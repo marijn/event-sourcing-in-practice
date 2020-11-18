@@ -70,21 +70,15 @@ namespace TicketBlaster\TicketShop {
 
         private $ticketId;
 
-        function ticketId (): string {
-            return $this->ticketId;
-        }
+        function ticketId (): string { return $this->ticketId; }
 
         private $showId;
 
-        function showId (): string {
-            return $this->showId;
-        }
+        function showId (): string { return $this->showId; }
 
         private $soldAt;
 
-        function soldAt (): string {
-            return $this->soldAt;
-        }
+        function soldAt (): string { return $this->soldAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -92,6 +86,10 @@ namespace TicketBlaster\TicketShop {
                 'showId' => $this->showId,
                 'soldAt' => $this->soldAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->ticketId);
         }
     }
 }

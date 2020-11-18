@@ -72,21 +72,15 @@ namespace TicketBlaster\ExperimentalTicketChecking {
 
         private $showId;
 
-        function showId (): string {
-            return $this->showId;
-        }
+        function showId (): string { return $this->showId; }
 
         private $ticketId;
 
-        function ticketId (): string {
-            return $this->ticketId;
-        }
+        function ticketId (): string { return $this->ticketId; }
 
         private $issuedAt;
 
-        function issuedAt (): string {
-            return $this->issuedAt;
-        }
+        function issuedAt (): string { return $this->issuedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -94,6 +88,10 @@ namespace TicketBlaster\ExperimentalTicketChecking {
                 'ticketId' => $this->ticketId,
                 'issuedAt' => $this->issuedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->showId);
         }
     }
 
@@ -159,21 +157,15 @@ namespace TicketBlaster\ExperimentalTicketChecking {
 
         private $showId;
 
-        function showId (): string {
-            return $this->showId;
-        }
+        function showId (): string { return $this->showId; }
 
         private $ticketId;
 
-        function ticketId (): string {
-            return $this->ticketId;
-        }
+        function ticketId (): string { return $this->ticketId; }
 
         private $usedAt;
 
-        function usedAt (): string {
-            return $this->usedAt;
-        }
+        function usedAt (): string { return $this->usedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -181,6 +173,10 @@ namespace TicketBlaster\ExperimentalTicketChecking {
                 'ticketId' => $this->ticketId,
                 'usedAt' => $this->usedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->showId);
         }
     }
 
@@ -246,21 +242,15 @@ namespace TicketBlaster\ExperimentalTicketChecking {
 
         private $showId;
 
-        function showId (): string {
-            return $this->showId;
-        }
+        function showId (): string { return $this->showId; }
 
         private $ticketId;
 
-        function ticketId (): string {
-            return $this->ticketId;
-        }
+        function ticketId (): string { return $this->ticketId; }
 
         private $checkedAt;
 
-        function checkedAt (): string {
-            return $this->checkedAt;
-        }
+        function checkedAt (): string { return $this->checkedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -268,6 +258,10 @@ namespace TicketBlaster\ExperimentalTicketChecking {
                 'ticketId' => $this->ticketId,
                 'checkedAt' => $this->checkedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->showId);
         }
     }
 
@@ -333,21 +327,15 @@ namespace TicketBlaster\ExperimentalTicketChecking {
 
         private $showId;
 
-        function showId (): string {
-            return $this->showId;
-        }
+        function showId (): string { return $this->showId; }
 
         private $ticketId;
 
-        function ticketId (): string {
-            return $this->ticketId;
-        }
+        function ticketId (): string { return $this->ticketId; }
 
         private $checkedAt;
 
-        function checkedAt (): string {
-            return $this->checkedAt;
-        }
+        function checkedAt (): string { return $this->checkedAt; }
 
         function rawMessagePayload (): array {
             return [
@@ -355,6 +343,10 @@ namespace TicketBlaster\ExperimentalTicketChecking {
                 'ticketId' => $this->ticketId,
                 'checkedAt' => $this->checkedAt,
             ];
+        }
+
+        function EventStreamId (): \Infra\EventSourcing\EventStreamId {
+            return \Infra\EventSourcing\EventStreamId::fromString($this->showId);
         }
     }
 
@@ -382,15 +374,11 @@ namespace TicketBlaster\ExperimentalTicketChecking {
 
         private $showId;
 
-        function showId (): string {
-            return $this->showId;
-        }
+        function showId (): string { return $this->showId; }
 
         private $ticketId;
 
-        function ticketId (): string {
-            return $this->ticketId;
-        }
+        function ticketId (): string { return $this->ticketId; }
 
         function rawMessagePayload (): array {
             return [
